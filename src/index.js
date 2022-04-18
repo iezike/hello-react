@@ -16,9 +16,12 @@ const Button = (props) => {
 
 const Application = (props) => {
   const [name, setName] = useState("Ikenna");
+  const handleChange = (event) => {
+    setName(event.target.value)
+  }
   return (
     <main>
-      <input placeholder='Type your name'></input>
+      <input onChange={handleChange} placeholder='Type your name'></input>
       <Button>RESET</Button>
       <h1>Hello {name}</h1>
     </main>
