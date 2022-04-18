@@ -16,16 +16,11 @@ const Button = (props) => {
 
 const Application = (props) => {
   const [name, setName] = useState("Ikenna");
-
-  const reset = () => {
-    console.log("reset");
-    // your code here
-  };
-
   return (
     <main>
+      <input placeholder='Type your name'></input>
       <Button>RESET</Button>
-      <h1>Hello {name}t</h1>
+      <h1>Hello {name}</h1>
     </main>
   );
 };
