@@ -15,6 +15,7 @@ const Button = (props) => {
 };
 
 const Application = (props) => {
+  const [name, setName] = useState("Ikenna");
 
   const reset = () => {
     console.log("reset");
@@ -24,7 +25,7 @@ const Application = (props) => {
   return (
     <main>
       <Button>RESET</Button>
-      <h1>Hello React</h1>
+      <h1>Hello {name}t</h1>
     </main>
   );
 };
