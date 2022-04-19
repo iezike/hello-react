@@ -3,27 +3,29 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 const Button = (props) => {
-  const handleClick = () => {
-    console.log("reset");
-    // your code here
-  };
   return (
-    <button onClick = {handleClick}>
+    <button onClick={props.onClick}>
       {props.children}
     </button>
   )
 };
 
 const Application = (props) => {
-  const [name, setName] = useState("Ikenna");
+  const [name, setName] = useState("");
   const handleChange = (event) => {
-    setName(event.target.value)
+    setName(event.target.value? event.target.value: "")
   }
+
+  const reset = () => {
+    setName("");
+    // your code here
+  };
+
   return (
     <main>
-      <input onChange={handleChange} placeholder='Type your name'></input>
-      <Button>RESET</Button>
-      <h1>Hello {name}</h1>
+      <input value={name} onChange={handleChange} placeholder='Type your name'></input>
+      <Button onClick={reset}>RESET</Button>
+      {name && <h1>Hello {name}</h1>}
     </main>
   );
 };
